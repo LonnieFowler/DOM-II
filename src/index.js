@@ -46,11 +46,46 @@ for (let destination of destinations) {
     destination.addEventListener('mouseenter', evt => {
         destination.style.fontWeight = "bold"
 
-    })
+    });
     destination.addEventListener("mouseleave", evt => {
         destination.style.fontWeight = "initial"
-    })
-}
+    });
+};
+
+//scroll
+const selectHeader = document.querySelector('h1')
+
+window.addEventListener("scroll", evt => {
+    selectHeader.style.color = 'green'
+})
+
+window.addEventListener('resize', evt => {
+    selectHeader.style.color = 'black'
+})
+
+const whole = document.body
+
+window.addEventListener('scroll', evt => {
+    if (window.scrollY <= 100) {
+        whole.style.backgroundColor = 'green'
+    } else if (window.scrollY <= 200) {
+        whole.style.backgroundColor = 'blue'
+    } else if (window.scrollY <= 400) {
+        whole.style.backgroundColor = 'purple'
+    } else if (window.scrollY <= 600) {
+        whole.style.backgroundColor = 'red'
+    } else {
+        whole.style.backgroundColor = 'orange'
+    }
+})
+
+const stillContent = document.querySelector('.btn')
+
+stillContent.addEventListener('click', evt => {
+    alert("sorry, the default behavior of this button has been prevented")
+    evt.preventDefault()
+})
+
 
 
 }
